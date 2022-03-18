@@ -1,0 +1,14 @@
+<nb-card>
+  <nb-card-header>
+    Your Booking List
+  </nb-card-header>
+    <ng2-smart-table
+      [settings]="settings"
+      [source]="booklist"
+      class="smart-table"
+      (custom)="onSaveConfirm($event)"
+  
+    >
+    </ng2-smart-table>
+  </nb-card>
+  

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="68" height="31" viewBox="0 0 68 31">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="_Icon_Сolor" data-name="🎨 Icon Сolor" d="M13.5,27A13.5,13.5,0,1,1,27,13.5,13.515,13.515,0,0,1,13.5,27Zm0-24.3A10.8,10.8,0,1,0,24.3,13.5,10.812,10.812,0,0,0,13.5,2.7Zm0,16.2a1.352,1.352,0,0,1-1.35-1.351v-2.7H9.45a1.35,1.35,0,0,1,0-2.7h2.7V9.45a1.35,1.35,0,1,1,2.7,0v2.7h2.7a1.35,1.35,0,1,1,0,2.7h-2.7v2.7A1.352,1.352,0,0,1,13.5,18.9Z" transform="translate(0 0)" fill="#36f"/>
+    </clipPath>
+  </defs>
+  <g id="add" transform="translate(-1757 -371)">
+    <g id="_27_Icon_plus-circle" data-name="27) Icon/plus-circle" transform="translate(1757 371)">
+      <g id="Group_335" data-name="Group 335" transform="translate(2 2)">
+        <path id="_Icon_Сolor-2" data-name="🎨 Icon Сolor" d="M13.5,27A13.5,13.5,0,1,1,27,13.5,13.515,13.515,0,0,1,13.5,27Zm0-24.3A10.8,10.8,0,1,0,24.3,13.5,10.812,10.812,0,0,0,13.5,2.7Zm0,16.2a1.352,1.352,0,0,1-1.35-1.351v-2.7H9.45a1.35,1.35,0,0,1,0-2.7h2.7V9.45a1.35,1.35,0,1,1,2.7,0v2.7h2.7a1.35,1.35,0,1,1,0,2.7h-2.7v2.7A1.352,1.352,0,0,1,13.5,18.9Z" transform="translate(0 0)" fill="#36f"/>
+      </g>
+    </g>
+    <text id="Add-2" data-name="Add" transform="translate(1812 392)" fill="#36f" font-size="14" font-family="Roboto-Bold, Roboto" font-weight="700"><tspan x="-12.599" y="0">Add</tspan></text>
+  </g>
+</svg>

@@ -1,0 +1,34 @@
+<div class="header-container">
+  <div class="logo-container">
+    <a (click)="toggleSidebar()" *ngIf="isUserAuthenticated" class="sidebar-toggle">
+      <nb-icon icon="menu"></nb-icon>
+    </a>
+    <a class="logo" (click)="navigateHome()">
+      Online Ticket System
+    </a>
+  </div>
+</div>
+
+<div class="header-container">
+  <nb-actions size="small">
+    <nb-action
+      class="control-item"
+      icon="{{ currentTheme == 'dark' ? 'moon-outline' : 'moon' }}"
+      aria-label="Theme"
+      (click)="toggleTheme()"
+    >
+    </nb-action>
+    <nb-action
+      class="control-item"
+      icon="globe"
+      aria-label="Language"
+      [nbContextMenu]="languages"
+      nbContextMenuTag="language-menu"
+    >
+    </nb-action>
+
+    <nb-action class="user-action" *ngIf="isUserAuthenticated">
+      <nb-user [nbContextMenu]="userMenu" nbContextMenuTag="profile-context-menu" [name]="user?.fullName"> </nb-user>
+    </nb-action>
+  </nb-actions>
+</div>

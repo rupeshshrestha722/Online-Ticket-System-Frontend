@@ -1,0 +1,56 @@
+<h1 id="title" class="title">LOGIN</h1>
+<form
+  (ngSubmit)="onLogin()"
+  name="loginForm"
+  [formGroup]="loginForm"
+  ngxsForm="login.loginForm"
+  aria-labelledby="title"
+>
+  <div class="form-control-group">
+    <label class="label" for="input-username">Username</label>
+    <input
+      nbInput
+      autoFocus
+      fullWidth
+      formControlName="username"
+      name="username"
+      id="input-username"
+      placeholder="Please Enter Username"
+      fieldSize="large"
+    />
+
+  </div>
+
+  <div class="form-control-group">
+    <span class="label-with-link">
+      <label class="label" for="input-password">Password:</label>
+    </span>
+    <input
+      nbInput
+      fullWidth
+      formControlName="password"
+      name="password"
+      type="password"
+      id="input-password"
+      placeholder="Please Enter Password"
+      fieldSize="large"
+      required
+    />
+  </div>
+
+  <div class="form-control-group accept-group">
+    <nb-checkbox name="rememberMe" formControlName="rememberMe">Remember Me</nb-checkbox>
+  </div>
+
+  <button
+    id="btn-login"
+    nbButton
+    fullWidth
+    status="primary"
+    size="large"
+    [disabled]="(submitted$ | async) || !loginForm.valid"
+    [class.btn-pulse]="submitted$ | async"
+  >
+   Login
+  </button>
+</form>

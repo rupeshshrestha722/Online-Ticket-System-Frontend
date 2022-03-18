@@ -1,0 +1,14 @@
+<nb-card>
+  <nb-card-header>Bus Booked</nb-card-header>
+  <div class="text-wrap">
+    <p class="red-text">
+     Confirm
+    </p>
+    <div class="btn-wrap">
+      <button nbButton status="primary" class="send-btn" (click)="onConfirm($event)">
+       Yes
+      </button>
+      <button nbButton status="danger" (click)="closeWindow()">No</button>
+    </div>
+  </div>
+</nb-card>

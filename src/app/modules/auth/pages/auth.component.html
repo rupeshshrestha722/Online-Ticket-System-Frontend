@@ -1,0 +1,21 @@
+<nb-layout windowMode>
+  <nb-layout-header fixed>
+    <app-header></app-header>
+  </nb-layout-header>
+  <nb-layout-column>
+    <nb-card>
+      <nb-card-body>
+        <div class="nb-auth-block">
+          <div class="logo">
+            Welcome
+          </div>
+          <router-outlet></router-outlet>
+        </div>
+      </nb-card-body>
+    </nb-card>
+  </nb-layout-column>
+  <nb-layout-footer fixed>
+    <!-- Insert footer here -->
+    <app-footer></app-footer>
+  </nb-layout-footer>
+</nb-layout>

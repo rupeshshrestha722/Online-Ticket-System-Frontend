@@ -1,0 +1,24 @@
+<nb-layout windowMode>
+  <nb-layout-header fixed>
+    <!-- Insert header here -->
+    <app-header></app-header>
+  </nb-layout-header>
+
+  <nb-sidebar class="menu-sidebar" tag="menu-sidebar" responsive>
+    <div *ngIf="role == 'ADMIN'">
+      <nb-menu [items]="adminMenu"></nb-menu>
+    </div>
+    <div *ngIf="role == 'USER'">
+      <nb-menu [items]="userMenu"></nb-menu>
+    </div>
+  </nb-sidebar>
+
+  <nb-layout-column>
+    <router-outlet></router-outlet>
+  </nb-layout-column>
+
+  <nb-layout-footer fixed>
+    <!-- Insert footer here -->
+    <app-footer></app-footer>
+  </nb-layout-footer>
+</nb-layout>

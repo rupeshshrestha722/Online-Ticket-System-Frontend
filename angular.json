@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "f45582d6-c61c-42c3-a473-5c568016ae22"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -27,7 +30,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -48,7 +51,7 @@
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "with": "src/environments/environment.hmr.ts"
                 }
               ],
               "outputHashing": "all"
@@ -72,6 +75,10 @@
             },
             "development": {
               "browserTarget": "Online_Ticket_System_frontend:build:development"
+            },
+            "hmr": {
+              "hmr": true,
+              "browserTarget": "Online_Ticket_System_frontend:build:hmr"
             }
           },
           "defaultConfiguration": "development"

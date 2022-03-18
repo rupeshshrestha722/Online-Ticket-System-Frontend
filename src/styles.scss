@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'themes';
+
+@import '~@nebular/theme/styles/globals';
+
+$eva-icons-font-path: '~eva-icons/style/fonts';
+@import '~eva-icons/style/scss/eva-icons.scss';
+
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+@import '~bootstrap/scss/grid';
+@import '~bootstrap/scss/utilities';
+
+@include nb-install() {
+  @include nb-theme-global();
+}
+/* You can add global styles to this file, and also import other style files */
+i.eva {
+  font-size: 24px;
+}
+
+::ng-deep {
+  .label {
+    display: block;
+    margin-bottom: 0.5rem;
+    height: 1.8em;
+  }
+  .form-control-group {
+    margin-bottom: 2rem;
+  }
+}

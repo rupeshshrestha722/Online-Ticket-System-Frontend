@@ -1,0 +1,32 @@
+::ng-deep {
+  .ng2-smart-actions {
+    ng2-st-tbody-custom,
+    ng2-st-actions {
+      display: flex;
+      height: 100%;
+    }
+    ng2-st-tbody-edit-delete,
+    ng2-st-tbody-create-cancel {
+      height: 0px !important;
+    }
+  }
+  .hide-action td.ng2-smart-actions a {
+    display: none;
+  }
+
+  .danger {
+    background: red;
+    color: #fff;
+    padding: 5px;
+  }
+
+  .success {
+    background: green;
+    color: #fff;
+    padding: 5px;
+  }
+  
+}
+
+
+

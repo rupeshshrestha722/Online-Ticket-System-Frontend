@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+  <g id="edit-blue-icon" transform="translate(6661 -9405)">
+    <path id="Oval" d="M15,0A15,15,0,1,1,0,15,15,15,0,0,1,15,0Z" transform="translate(-6661 9405)" fill="#36f"/>
+    <path id="Shape" d="M2.916,14H0V11.084l8.6-8.6L11.517,5.4,2.916,14ZM12.35,4.567h0L9.433,1.651,10.857.228a.774.774,0,0,1,1.1,0l1.82,1.82a.776.776,0,0,1,0,1.1L12.351,4.566Z" transform="translate(-6652 9413)" fill="#fff"/>
+  </g>
+</svg>
