@@ -30,7 +30,7 @@ import {
   NbTreeGridModule,
   NbListModule,
   NbCheckboxModule,
-  NbLayoutModule
+  NbDatepickerModule
 } from '@nebular/theme';
 
 import { CoreModule } from '@core/core.module';
@@ -78,6 +78,7 @@ import { BookState } from '@state/dashboard/book.state';
     Ng2SmartTableModule,
     NgxMaterialTimepickerModule,
     NbCheckboxModule,
+    NbDatepickerModule.forRoot(),
     // NgxChartsModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true }],

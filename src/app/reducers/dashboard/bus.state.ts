@@ -3,7 +3,7 @@ import { tap, catchError } from 'rxjs/operators';
 
 import { State, Selector, Action, StateContext } from '@ngxs/store';
 import { BusService } from '@core/services';
-import { AddBusAction, GetBusAction, SetSelectedBusAction } from '@actions/dashboard';
+import { AddBusAction, EditBusAction, GetBusAction, SetSelectedBusAction } from '@actions/dashboard';
 import { Injectable } from '@angular/core';
 
 export class BusStateModel {
@@ -28,7 +28,7 @@ export class BusStateModel {
       model: {
         busNo: '',
         busModel: '',
-        noOfseats: 0,
+        noOfSeats: 0,
         fare:0,
         source: '',
         destination: '',
@@ -65,21 +65,21 @@ export class BusState {
 
   /** Add Bus */
   @Action(AddBusAction)
-  addDepartment({ getState, patchState }: StateContext<BusStateModel>) {
+  addBus({ getState, patchState }: StateContext<BusStateModel>, {payload}: AddBusAction) {
     const state = getState();
     const form = state.bus.model;
     patchState({ ...state, submitted: true });
 
     return this.busService
       .addBus(
-        form?.busNo as any,
-       form?.busModel as any, 
-       form?.noOfseats as any, 
-       form?.fare as any, 
-       form?.source as any,
-        form?.destination as any, 
-        form?.departureDate as any,
-        form?.arrivalDate as any)
+        payload.busNo,
+        payload.busModel, 
+        payload.noOfSeats, 
+        payload.fare, 
+        payload.source,
+        payload.destination, 
+        payload.departureDate,
+        payload.arrivalDate)
       .pipe(
         tap(res => {
           patchState({
@@ -122,5 +122,28 @@ export class BusState {
   @Action(SetSelectedBusAction)
   setSelectedBus({ patchState }: StateContext<BusStateModel>, { payload }: SetSelectedBusAction) {
     patchState({ selectedBus: payload });
+  } 
+  
+  @Action(EditBusAction)
+  edit({ getState, patchState }: StateContext<BusStateModel>, { id,payload }: EditBusAction) {
+    const state = getState();
+
+    patchState({ ...state, submitted: true });
+    return this.busService
+      .editBus(
+       id, payload.busNo, payload.busModel, payload.noOfSeats, payload.fare, payload.source, payload.destination, payload.departureDate, payload.arrivalDate)
+      .pipe(
+        tap(res => {
+          patchState({});
+        }),
+        catchError(err => {
+          patchState({
+            submitted: false
+          });
+          throw err;
+        })
+      );
   }
+
+ 
 }

@@ -23,18 +23,8 @@ export class DashboardComponent {
     {
       title: 'Manage Bus Info',
       icon: 'people-outline',
-      link: '/add-employee'
-    },
-    {
-      title: 'Manage Customer Info',
-      icon: 'people-outline',
-      link: '/add-employee'
-    },
-    {
-      title: 'Manage Staff Info',
-      icon: 'people-outline',
-      link: '/add-employee'
-    },
+      link: '/bus'
+    }
     
   ];
 

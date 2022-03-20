@@ -4,12 +4,15 @@ export class GetBusAction {
   
   export class AddBusAction {
     static readonly type = '[Bus] Add';
+
+      
+    constructor(public payload:any) {}
   }
   
   export class EditBusAction {
     static readonly type = '[Bus] Edit';
   
-    constructor(public payload:any) {}
+    constructor(public id: number, public payload:any) {}
   }
   
   export class SetSelectedBusAction {

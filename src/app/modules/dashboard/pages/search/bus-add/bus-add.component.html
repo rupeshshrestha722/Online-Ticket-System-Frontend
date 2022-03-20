@@ -1,0 +1,95 @@
+<form [formGroup]="busForm" (ngSubmit)="onSubmit()" ngxsForm="bus.add">
+
+    <nb-card class="profile-body">
+        <nb-card-body>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-control-group">
+                        <label class="label" for="input-bus-no">Bus No:</label>
+                        <input nbInput formControlName="busNo" placeholder="Bus No" autofocus fullWidth
+                            fieldSize="large" required minlength="3" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-control-group">
+                        <label class="label" for="input-bus-model">Bus Model:</label>
+                        <input nbInput formControlName="busModel" placeholder="Bus Model" autofocus fullWidth fieldSize="large"
+                            required minlength="3" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-control-group">
+                        <label class="label" for="input-no-of-seat">No of Seats:</label>
+                        <input type="number" nbInput formControlName="noOfSeats" placeholder="No of Seats" autofocus fullWidth fieldSize="large"
+                            required minlength="3" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-control-group">
+                        <label class="label" for="input-fare">Fare</label>
+                        <input type="number" nbInput formControlName="fare" placeholder="Fare" autofocus fullWidth fieldSize="large"
+                            required minlength="10" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-control-group">
+                        <label class="label" for="input-resourcemarks">Source</label>
+                        <input nbInput formControlName="source" placeholder="Source" autofocus fullWidth fieldSize="large"
+                            required minlength="3" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-control-group">
+                        <label class="label" for="input-destination">Destination</label>
+                        <input nbInput formControlName="destination" placeholder="Destination" autofocus fullWidth fieldSize="large"
+                            required minlength="3" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-control-group">
+                        <label class="label" for="input-fare">Departure Date</label>
+                        <input
+          nbInput
+          formControlName="departureDate"
+          placeholder="Departure Date"
+          autofocus
+          fullWidth
+          [nbDatepicker]="startFormpicker"
+          fieldSize="large"
+          required
+        />
+        <nb-datepicker  #startFormpicker></nb-datepicker>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-control-group">
+                        <label class="label" for="input-fare">Arrival Date</label>
+                        <input
+          nbInput
+          formControlName="arrivalDate"
+          placeholder="Arrival Date"
+          autofocus
+          fullWidth
+          [nbDatepicker]="endFormpicker"
+          fieldSize="large"
+          required
+        />
+        <nb-datepicker #endFormpicker></nb-datepicker>
+                    </div>
+                </div>
+              
+            </div>
+        </nb-card-body>
+    </nb-card>
+    <div class="buttons">
+        <button nbButton status="primary" type="submit"
+            [disabled]="(submitted$ | async) || !busForm.valid || !busForm.dirty">
+            Save
+        </button>
+    </div>
+</form> 

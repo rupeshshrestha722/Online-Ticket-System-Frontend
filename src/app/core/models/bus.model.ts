@@ -2,36 +2,36 @@ export namespace Bus {
     export interface BusRequest {
       busNo: string;
       busModel: string;
-      noOfseats: number;
+      noOfSeats: number;
       fare: number;
       source: string;
       destination: string;
       departureDate: string;
-      arrivalDate: String;
+      arrivalDate: string;
     }
   
     export interface BusResponse {
         id: number;
         busNo: string;
         busModel: string;
-        noOfseats: number;
+        noOfSeats: number;
         fare: number;
         source: string;
         destination: string;
         departureDate: string;
-        arrivalDate: String;
+        arrivalDate: string;
     }
   
     export interface DepartmentEditRequest {
         id: number;
         busNo: string;
         busModel: string;
-        noOfseats: number;
+        noOfSeats: number;
         fare: number;
         source: string;
         destination: string;
         departureDate: string;
-        arrivalDate: String;
+        arrivalDate: string;
     }
   }
   

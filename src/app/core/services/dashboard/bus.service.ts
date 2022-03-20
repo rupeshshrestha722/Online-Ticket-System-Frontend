@@ -15,7 +15,7 @@ export class BusService {
    * Add Bus
    * @param busNo Bus No
    * @param busModel Bus Model
-   * @param noOfseats No of Seats
+   * @param noOfSeats No of Seats
    * @param fare Fare
    * @param soruce Source
    * @param destination Destination
@@ -23,19 +23,54 @@ export class BusService {
    * @param arrivalDate Arrival Date
    */
   addBus(
-    busNo: string | undefined,
-    busModel: string | undefined,
-    noOfseats: number | undefined,
-    fare: number | undefined,
-    source: string | undefined,
-    destination: string | undefined,
-    departureDate: string | undefined,
-    arrivalDate: string | undefined
+    busNo: string,
+    busModel: string,
+    noOfSeats: number,
+    fare: number,
+    source: string,
+    destination: string,
+    departureDate: string,
+    arrivalDate: string
   ) {
     return this.httpClient.post<Bus.BusRequest>(`${API_URL}/schedules`, {
       busNo,
       busModel,
-      noOfseats,
+      noOfSeats,
+      fare,
+      source,
+      destination,
+      departureDate,
+      arrivalDate
+    });
+  }
+
+  /**
+   * Edit Bus
+   * @param id Id
+   * @param busNo Bus No
+   * @param busModel Bus Model
+   * @param noOfSeats No of Seats
+   * @param fare Fare
+   * @param soruce Source
+   * @param destination Destination
+   * @param departureDate DepartureDate
+   * @param arrivalDate Arrival Date
+   */
+   editBus(
+     id: number,
+    busNo: string,
+    busModel: string,
+    noOfSeats: number,
+    fare: number,
+    source: string,
+    destination: string,
+    departureDate: string,
+    arrivalDate: string
+  ) {
+    return this.httpClient.put<Bus.BusRequest>(`${API_URL}/schedules/${id}`, {
+      busNo,
+      busModel,
+      noOfSeats,
       fare,
       source,
       destination,

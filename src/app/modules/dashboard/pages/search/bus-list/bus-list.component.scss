@@ -10,6 +10,10 @@
       height: 0px !important;
     }
   }
+
+.hide-action td.ng2-smart-actions  a{
+  display: none;
+}
   .danger {
     background: red;
     color: #fff;
