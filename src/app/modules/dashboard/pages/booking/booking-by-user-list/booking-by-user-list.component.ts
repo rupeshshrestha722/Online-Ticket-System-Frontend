@@ -74,7 +74,15 @@ export class BookingListByUserComponent implements OnInit {
           title: 'Total Fare',
           filter: false
       },
-     
+      bus: {
+        title: 'Source',
+        filter: false,
+        valuePrepareFunction: (value: any) => {
+          // console.log('val', value);
+         return value.source;
+        }
+      },
+  
       status: {
          title: ' Payment',
          type: 'html',
