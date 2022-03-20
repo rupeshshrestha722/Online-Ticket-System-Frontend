@@ -143,13 +143,13 @@ export class BookState {
 
    /** Edit Booking */
    @Action(EditBookAction)
-   edit({ getState, patchState }: StateContext<BookStateModel>, { payload }: EditBookAction) {
+   edit({ getState, patchState }: StateContext<BookStateModel>, { id,payload }: EditBookAction) {
      const state = getState();
  
      patchState({ ...state, submitted: true });
      return this.bookService
        .editBook(
-        payload.id, payload.passengerName, payload.email, payload.mobileNo, payload.remarks, payload.noOfSeats, payload.fare, payload.totalFare, payload.user, payload.bus)
+        id, payload.passengerName, payload.email, payload.mobileNo, payload.remarks, payload.noOfSeats, payload.fare, payload.totalFare, payload.user, payload.bus)
        .pipe(
          tap(res => {
            patchState({});

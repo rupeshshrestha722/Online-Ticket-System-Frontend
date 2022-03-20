@@ -16,5 +16,5 @@ export class MakePaymentAction {
 export class EditBookAction {
   static readonly type = '[Edit] Book';
 
-  constructor (public payload: any){}
+  constructor (public id: number, public payload: any){}
 }

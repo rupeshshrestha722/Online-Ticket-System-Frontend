@@ -1,8 +1,8 @@
 import { Select, Store } from '@ngxs/store';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { BookAction, EditBookAction, MakePaymentAction } from '@actions/dashboard';
+import { EditBookAction } from '@actions/dashboard';
 import { BookState } from '@state/dashboard/book.state';
 import { Observable } from 'rxjs';
 import { NbToastrService, NbWindowRef } from '@nebular/theme';
@@ -77,7 +77,7 @@ export class EditBookComponent implements OnInit {
     onSubmit() {
       /** Use Store to call Action */
 
-      this.store.dispatch(new EditBookAction(this.inputData.data)).subscribe(
+      this.store.dispatch(new EditBookAction(this.inputData.data.id, this.bookForm.value)).subscribe(
         res => {
           this.toaster.success("Updated Successfully", 'Booking');
           this.bookForm.reset();
