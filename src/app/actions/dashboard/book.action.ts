@@ -12,3 +12,9 @@ export class MakePaymentAction {
 
   constructor (public id: number, public status: string){}
 }
+
+export class EditBookAction {
+  static readonly type = '[Edit] Book';
+
+  constructor (public payload: any){}
+}

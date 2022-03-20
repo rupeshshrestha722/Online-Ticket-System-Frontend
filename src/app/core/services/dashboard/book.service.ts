@@ -44,6 +44,41 @@ export class BookService {
     });
   }
 
+    /**
+   * Edit Book
+   * @param id id
+   * @param passengerName Passenger Name
+   * @param email Email
+   * @param mobileNo Mobile No
+   * @param remarks Remarks
+   * @param userId UserId
+   * @param busId Bus id
+   */
+     editBook(
+       id: number,
+      passengerName: string,
+      email: string,
+      mobileNo: number,
+      remarks: number,
+      noOfSeats: number,
+      fare: number,
+      totalFare: number,
+      user: any,
+      bus: any
+    ) {
+      return this.httpClient.put<Book.BookRequest>(`${API_URL}/booking/${id}`, {
+          passengerName,
+          email,
+          mobileNo,
+          remarks,
+          noOfSeats,
+          fare,
+          totalFare,
+          user,
+          bus,
+      });
+    }
+
   /**
    * Get All Booking
    */

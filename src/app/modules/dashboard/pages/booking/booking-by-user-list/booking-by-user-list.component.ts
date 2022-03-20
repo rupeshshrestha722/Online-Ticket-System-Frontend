@@ -8,6 +8,7 @@ import { BookState } from '@state/dashboard/book.state';
 import { AllBookingAction } from '@actions/dashboard';
 import { PaymentComponent } from '../../payment/payment.component';
 import { SmartTableConfig } from '@core/services';
+import { EditBookComponent } from '../../search/book/book-edit/book-edit.component';
 @Component({
   selector: 'app-booking-by-user-list',
   templateUrl: './booking-by-user-list.component.html',
@@ -40,10 +41,15 @@ export class BookingListByUserComponent implements OnInit {
       delete: false,    
       custom: [
         {
+          name: 'edit',
+          title: '<i class="eva eva-edit-2-outline"></i>'
+        },
+        {
           name: 'payment',
           title: '<i class="eva eva-film-outline"></i>',
         
         },
+        
         
       ],
     },
@@ -124,14 +130,26 @@ export class BookingListByUserComponent implements OnInit {
   }
 
   onSaveConfirm(event: any) {
+    console.log(event, 'events')
 
-    this.windowRef = this.windowService.open(PaymentComponent, {
-      title: 'Make Payment',
-      context: {
-        isEdit: true,
-        data: event.data
-      }
-    });
+    if(event.action == 'payment'){
+      this.windowRef = this.windowService.open(PaymentComponent, {
+        title: 'Make Payment',
+        context: {
+          isEdit: true,
+          data: event.data
+        }
+      });
+    }else if(event.action == 'edit'){
+      this.windowRef = this.windowService.open(EditBookComponent, {
+        title: 'Edit Booking',
+        context: {
+          isEdit: true,
+          data: event.data
+        }
+      });
+    }
+   
   }
 
  

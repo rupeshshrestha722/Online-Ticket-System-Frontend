@@ -3,7 +3,7 @@ import { tap, catchError } from 'rxjs/operators';
 
 import { State, Selector, Action, StateContext } from '@ngxs/store';
 import { BookService } from '@core/services';
-import { AllBookingAction, BookAction, MakePaymentAction } from '@actions/dashboard';
+import { AllBookingAction, BookAction, EditBookAction, MakePaymentAction } from '@actions/dashboard';
 import { Injectable } from '@angular/core';
 
 export class BookStateModel {
@@ -140,6 +140,28 @@ export class BookState {
         })
       );
   }
+
+   /** Edit Booking */
+   @Action(EditBookAction)
+   edit({ getState, patchState }: StateContext<BookStateModel>, { payload }: EditBookAction) {
+     const state = getState();
+ 
+     patchState({ ...state, submitted: true });
+     return this.bookService
+       .editBook(
+        payload.id, payload.passengerName, payload.email, payload.mobileNo, payload.remarks, payload.noOfSeats, payload.fare, payload.totalFare, payload.user, payload.bus)
+       .pipe(
+         tap(res => {
+           patchState({});
+         }),
+         catchError(err => {
+           patchState({
+             submitted: false
+           });
+           throw err;
+         })
+       );
+   }
 
   
 }
